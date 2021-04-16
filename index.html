@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>Arjun Vijayan</title>
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="bg-info" style="position: fixed; width: 100%;z-index: 1;">
+    <div class="row text-white">
+      <div class="col-8 p-4">
+        <h4>Arjun Vijayan</h4>
+      </div>
+      <div class="col-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+          <div class="container-fluid">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active text-white p-4" aria-current="page" href="#home-section"
+                    style="font-size: 20px">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white p-4" href="#service-section" style="font-size: 20px">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white p-4" href="#contact-section" style="font-size: 20px">Contact Me</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="p-6" id="home-section" style="padding-top: 10em;">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <img src="/project 1/img/View-HTML.jpg" style="width: 100%;">
+        </div>
+        <div class="col-6">
+          <p style="font-size: 400%;">Hi, I am Arjun Vijayan<br> and I'm a Web<br> Developer
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light p-6" id="service-section" style="margin-bottom: 1em; width: 100%;">
+    <div class="container">
+      <h1 class="text-center">Services</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+            <img src="/project 1/img/icons8-web-design-48.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Web Designer</h5>
+              <p class="card-text">I have basic knowledge on Front end tools.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+            <img src="/project 1/img/icons8-developer-100.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Web Development</h5>
+              <p class="card-text">I have experience on Python Django Framework and Javascript. I use Mongo Database.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-dark p-6" id="contact-section" style="padding-top: 1em; width:100%;">
+    <div class="container">
+      <h1 class="text-center text-white">Contact Me</h1>
+      <div class="row">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputName" class="form-label text-white">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+            <label style="display: none; color:white;" id="error1">Enter Minimum 4 characters</label>
+            <label style="display: none; color:white; padding-left: 1em;" id="error2">Enter valid name</label>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label text-white">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email Id">
+            <label style="display: none; color:white;" id="error3">Enter valid Email Id</label>
+          </div>
+          <div class="col-md-6">
+            <label for="inputPhone" class="form-label text-white">Mobile Number</label>
+            <input type="tel" class="form-control" id="number" placeholder="Number">
+            <label style="display: none; color: white;" id="error4">Enter valid Number</label>
+          </div>
+          <div class="col-12">
+            <label for="inputMessage" class="form-label text-white">Message</label>
+            <textarea class="form-control" cols="20" rows="5"></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-info mt">
+    <div class="container">
+      <div class="col-md-12 text-center">
+        <p>Copyrights</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#name").blur(function () {
+        var text = $(this).val()
+        if (text.length < 4) {
+          $("#error1").show()
+        }
+        else {
+          $("#error1").hide()
+        }
+        if (/^[A-Za-z ]+$/.test(text) == false) {
+          $("#error2").show()
+        }
+        else {
+          $("#error2").hide()
+        }
+      })
+      $("#inputEmail4").blur(function () {
+        var text = $(this).val()
+        if (/^[A-Za-z0-9]+@gmail.com+$/.test(text) == false) {
+          $("#error3").show()
+        }
+        else {
+          $("#error3").hide()
+        }
+      })
+      $("#number").blur(function () {
+        var text = $(this).val()
+        if (text.length == 10) {
+          if (/^[0-9]+$/.test(text) == true) {
+            $("#error4").hide()
+          }
+          else {
+            $("error4").show()
+          }
+        }
+        else {
+          $("#error4").show()
+        }
+      })
+    })
+  </script>
+</body>
+</html>
