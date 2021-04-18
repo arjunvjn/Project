@@ -1,0 +1,19 @@
+$(document).ready(function(){
+    $("#submit-form").validate({
+        rules:{
+            name:{
+                required:true,
+                minlength:4
+            },
+            number:{
+                required:true,
+                minlength:10,
+                maxlength:10
+            },
+            inputEmail4:{
+                required:true
+            }
+        }
+
+    })
+})

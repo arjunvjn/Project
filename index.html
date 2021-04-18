@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +8,8 @@
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <title>Arjun Vijayan</title>
   <link href="style.css" type="text/css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body>
   <header class="bg-info" style="position: fixed; width: 100%;z-index: 1;">
     <div class="row text-white">
@@ -75,7 +74,8 @@
             <img src="img/icons8-developer-100.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Web Development</h5>
-              <p class="card-text">I have experience on Python Django Framework and Javascript. The Database which I use is Mongo.
+              <p class="card-text">I have experience on Python Django Framework and Javascript. The Database which I use
+                is Mongo.
               </p>
             </div>
           </div>
@@ -87,26 +87,22 @@
     <div class="container">
       <h1 class="text-center text-white">Contact Me</h1>
       <div class="row">
-        <form class="row g-3">
+        <form class="row g-3" id="submit-form" action="">
           <div class="col-md-6">
             <label for="inputName" class="form-label text-white">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
-            <label style="display: none; color:white;" id="error1">Enter Minimum 4 characters</label>
-            <label style="display: none; color:white; padding-left: 1em;" id="error2">Enter valid name</label>
+            <input type="text" class="form-control" name="name" placeholder="Name">
           </div>
           <div class="col-md-6">
             <label for="inputPhone" class="form-label text-white">Mobile Number</label>
-            <input type="tel" class="form-control" id="number" placeholder="Number">
-            <label style="display: none; color: white;" id="error4">Enter valid Number</label>
+            <input type="tel" class="form-control" name="number" placeholder="Number">
           </div>
           <div class="col-md-12">
             <label for="inputEmail4" class="form-label text-white">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email Id">
-            <label style="display: none; color:white;" id="error3">Enter valid Email Id</label>
+            <input type="email" class="form-control" name="inputEmail4" placeholder="Email Id">
           </div>
           <div class="col-12">
             <label for="inputMessage" class="form-label text-white">Message</label>
-            <textarea class="form-control" cols="20" rows="5" id="message"></textarea>
+            <textarea class="form-control" cols="20" rows="5" name="message"></textarea>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary" style="width: 100%;" id="send">Send</button>
@@ -127,64 +123,26 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+  <script src="form.js"></script>
+  
   <script>
-    $(document).ready(function () {
-      var nflag=1,eflag=1,pflag=1
-      $("#name").blur(function () {
-        var text = $(this).val()
-        if (text.length < 4) {
-          $("#error1").show()
-          nflag=1
-        }
-        else {
-          $("#error1").hide()
-          nflag=0
-        }
-        if (/^[A-Za-z ]+$/.test(text) == false) {
-          $("#error2").show()
-          nflag=1
-        }
-        else {
-          $("#error2").hide()
-          nflag=0
-        }
-      })
-      $("#inputEmail4").blur(function () {
-        var text = $(this).val()
-        if (/^[A-Za-z0-9]+\@[a-z]+\.[a-z]+$/.test(text) == false) {
-          $("#error3").show()
-          eflag=1
-        }
-        else {
-          $("#error3").hide()
-          eflag=0
-        }
-      })
-      $("#number").blur(function () {
-        var text = $(this).val()
-        if (text.length == 10) {
-          if (/^[0-9]+$/.test(text) == true) {
-            $("#error4").hide()
-            pflag=0
-          }
-          else {
-            $("#error4").show()
-            pflag=1
-          }
-        }
-        else {
-          $("#error4").show()
-          pflag=1
-        }
-      })
-      $("#send").click(function(){
-        if(nflag==0 && pflag==0 && eflag==0)
-        {
-          alert("Message is sent")
-        }
-        else
-        {
-          alert("Please enter your details properly")
+    $("#submit-form").submit((e) => {
+      e.preventDefault()
+      $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxdviCSMAFbV0ZtWorbwWrJXZ53r9eZis3z8p-TPuahTYzdPrS67AgwLYlpSDMLjF6z/exec",
+        data: $("#submit-form").serialize(),
+        method: "post",
+        success: function (response) {
+          alert("Form submitted successfully")
+          window.location.reload()
+          //window.location.href="https://google.com"
+        },
+        error: function (err) {
+          alert("Something Error")
+          console.log("error");
+
         }
       })
     })
