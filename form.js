@@ -7,6 +7,7 @@ $(document).ready(function(){
             },
             number:{
                 required:true,
+                number:true,
                 minlength:10,
                 maxlength:10
             },
